@@ -1471,7 +1471,119 @@
             }
         }
 
-    </style>
+   /* =====================================================
+   البنر الرئيسي العريض
+===================================================== */
+
+.wide-hero-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    aspect-ratio: 1400 / 600;
+    margin: 45px auto 20px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #f7f3ef;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+.wide-hero-slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.wide-hero-slide.active {
+    display: block;
+}
+
+.wide-slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+    color: #765744;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+}
+
+.wide-prev {
+    left: 20px;
+}
+
+.wide-next {
+    right: 20px;
+}
+
+.wide-slider-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    display: flex;
+    gap: 8px;
+}
+
+.wide-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+}
+
+.wide-dot.active {
+    background: #a98268;
+    transform: scale(1.25);
+}
+
+/* الجوال */
+@media (max-width: 768px) {
+
+    .wide-hero-slider {
+        width: 100%;
+        aspect-ratio: 1400 / 600;
+        margin: 25px auto 10px;
+        border-radius: 14px;
+    }
+
+    .wide-slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+    }
+
+    .wide-prev {
+        left: 8px;
+    }
+
+    .wide-next {
+        right: 8px;
+    }
+
+    .wide-slider-dots {
+        bottom: 10px;
+    }
+} </style>
 
 </head>
 
@@ -1675,29 +1787,38 @@
 
         </div>
 
+<!-- البنرات الرئيسية العريضة -->
+<div class="wide-hero-slider">
 
+    <img class="wide-hero-slide active"
+         src="assets/banner-1.png"
+         alt="جبس هوم - توريد وتركيب الجبس بورد">
 
-        <div class="hero-visual">
+    <img class="wide-hero-slide"
+         src="assets/banner-2.png"
+         alt="جبس هوم - تشطيبات داخلية">
 
-            <div class="hero-frame">
+    <img class="wide-hero-slide"
+         src="assets/banner-3.png"
+         alt="جبس هوم - سيراميك وبورسلان">
 
-                <div class="hero-frame-inner">
+    <button class="wide-slider-arrow wide-prev"
+            type="button"
+            onclick="changeWideSlide(-1)">❮</button>
 
-                                        <img class="hero-slide active" src="assets/banner-1.png" alt="مشاريع جبس هوم - 1">
-                  <img class="hero-slide" src="assets/banner-2.png" alt="2 - مشاريع جبس هوم">
-                    <img class="hero-slide" src="assets/banner-3.png" alt="مشاريع جبس هوم - 3">
-                    <button class="slider-arrow prev" type="button" onclick="changeSlide(-1)" aria-label="الصورة السابقة">›</button>
-                    <button class="slider-arrow next" type="button" onclick="changeSlide(1)" aria-label="الصورة التالية">‹</button>
-                    <div class="slider-dots" aria-label="التنقل بين صور البنر">
-                        <button class="slider-dot active" type="button" onclick="goToSlide(0)" aria-label="الصورة 1"></button>
-                        <button class="slider-dot" type="button" onclick="goToSlide(1)" aria-label="الصورة 2"></button>
-                        <button class="slider-dot" type="button" onclick="goToSlide(2)" aria-label="الصورة 3"></button>
-                    </div>
+    <button class="wide-slider-arrow wide-next"
+            type="button"
+            onclick="changeWideSlide(1)">❯</button>
 
-                </div>
+    <div class="wide-slider-dots">
+        <button class="wide-dot active" onclick="goToWideSlide(0)"></button>
+        <button class="wide-dot" onclick="goToWideSlide(1)"></button>
+        <button class="wide-dot" onclick="goToWideSlide(2)"></button>
+    </div>
 
-            </div>
+</div>
 
+      
 
             <div class="floating-box">
 
@@ -3070,7 +3191,67 @@ document.addEventListener(
 );
 
 </script>
+<script>
+    /* =========================================
+       البنرات الرئيسية العريضة
+    ========================================= */
 
+    let wideSlideIndex = 0;
+    let wideSliderTimer;
+
+    function showWideSlide(index) {
+        const slides = document.querySelectorAll('.wide-hero-slide');
+        const dots = document.querySelectorAll('.wide-dot');
+
+        if (!slides.length) return;
+
+        if (index >= slides.length) {
+            wideSlideIndex = 0;
+        } else if (index < 0) {
+            wideSlideIndex = slides.length - 1;
+        } else {
+            wideSlideIndex = index;
+        }
+
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+        });
+
+        dots.forEach((dot) => {
+            dot.classList.remove('active');
+        });
+
+        slides[wideSlideIndex].classList.add('active');
+
+        if (dots[wideSlideIndex]) {
+            dots[wideSlideIndex].classList.add('active');
+        }
+    }
+
+    function changeWideSlide(direction) {
+        showWideSlide(wideSlideIndex + direction);
+        restartWideSlider();
+    }
+
+    function goToWideSlide(index) {
+        showWideSlide(index);
+        restartWideSlider();
+    }
+
+    function startWideSlider() {
+        wideSliderTimer = setInterval(function () {
+            showWideSlide(wideSlideIndex + 1);
+        }, 5000);
+    }
+
+    function restartWideSlider() {
+        clearInterval(wideSliderTimer);
+        startWideSlider();
+    }
+
+    showWideSlide(0);
+    startWideSlider();
+</script>
 
 </body>
 </html>
