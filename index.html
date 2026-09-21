@@ -1585,6 +1585,110 @@
     .wide-slider-dots {
         bottom: 10px;
     }
+}/* =====================================================
+   البنر الرئيسي - جبس هوم
+===================================================== */
+
+.home-banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f7f3ef;
+}
+
+.home-banner-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1400 / 600;
+}
+
+.home-banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.home-banner-slide.active {
+    display: block;
+}
+
+.home-banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: #765744;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.home-banner-prev {
+    left: 25px;
+}
+
+.home-banner-next {
+    right: 25px;
+}
+
+.home-banner-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+.home-banner-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.65);
+    cursor: pointer;
+}
+
+.home-banner-dot.active {
+    background: #a98268;
+    transform: scale(1.25);
+}
+
+/* الجوال */
+@media (max-width: 768px) {
+
+    .home-banner-track {
+        aspect-ratio: 1400 / 600;
+    }
+
+    .home-banner-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .home-banner-prev {
+        left: 8px;
+    }
+
+    .home-banner-next {
+        right: 8px;
+    }
+
+    .home-banner-dots {
+        bottom: 10px;
+    }
 } </style>
 
 </head>
@@ -1712,98 +1816,48 @@
      HERO
 ===================================================== -->
 
-<section
-    class="hero"
-    id="home"
->
+<section id="home" class="home-banner-slider">
 
-    <div class="container hero-grid">
+    <div class="home-banner-track">
 
+        <img
+            src="assets/banner-1.png"
+            class="home-banner-slide active"
+            alt="جبس هوم - توريد وتركيب الجبس بورد"
+        >
 
-        <div class="hero-content">
+        <img
+            src="assets/banner-2.png"
+            class="home-banner-slide"
+            alt="جبس هوم - تشطيبات داخلية"
+        >
 
-            <div class="small-title">
-                تشطيبات داخلية باحترافية
-            </div>
+        <img
+            src="assets/banner-3.png"
+            class="home-banner-slide"
+            alt="جبس هوم - سيراميك وبورسلان"
+        >
 
+    </div>
 
-            <h1>
+    <button
+        class="home-banner-arrow home-banner-prev"
+        type="button"
+        onclick="changeHomeBanner(-1)"
+        aria-label="البنر السابق"
+    >❮</button>
 
-                دقة التنفيذ وفخامة التشطيب مع
+    <button
+        class="home-banner-arrow home-banner-next"
+        type="button"
+        onclick="changeHomeBanner(1)"
+        aria-label="البنر التالي"
+    >❯</button>
 
-                <span>
-                    جبس هوم
-                </span>
-
-            </h1>
-
-
-            <p class="hero-description">
-
-                حلول متكاملة لتوريد وتركيب الجبس بورد
-                والسيراميك والبورسلان بمواصفات دقيقة
-                وتنفيذ احترافي وضمان على الأعمال.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-                <a
-                    href="#calculator"
-                    class="btn btn-primary"
-                >
-                    📐 احسب تكلفة مشروعك
-                </a>
-
-
-                <button
-                    class="btn btn-light"
-                    onclick="openModal()"
-                >
-                    📲 طلب معاينة موقع
-                </button>
-
-            </div>
-
-
-            <div class="hero-points">
-
-                <span class="hero-point">
-                    توريد
-                </span>
-
-                <span class="hero-point">
-                    تركيب
-                </span>
-
-                <span class="hero-point">
-                    تشطيب
-                </span>
-
-                <span class="hero-point">
-                    ضمان
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-      
-
-            <div class="floating-box">
-
-                جودة الخامات
-                <br>
-                ودقة التنفيذ
-
-            </div>
-
-        </div>
-
-
+    <div class="home-banner-dots">
+        <button class="home-banner-dot active" onclick="goToHomeBanner(0)" aria-label="البنر الأول"></button>
+        <button class="home-banner-dot" onclick="goToHomeBanner(1)" aria-label="البنر الثاني"></button>
+        <button class="home-banner-dot" onclick="goToHomeBanner(2)" aria-label="البنر الثالث"></button>
     </div>
 
 </section>
@@ -3169,61 +3223,65 @@ document.addEventListener(
        البنرات الرئيسية العريضة
     ========================================= */
 
-    let wideSlideIndex = 0;
-    let wideSliderTimer;
+ // ==========================================
+// البنرات الرئيسية الجديدة
+// ==========================================
 
-    function showWideSlide(index) {
-        const slides = document.querySelectorAll('.wide-hero-slide');
-        const dots = document.querySelectorAll('.wide-dot');
+let homeBannerIndex = 0;
+let homeBannerTimer;
 
-        if (!slides.length) return;
+function showHomeBanner(index) {
+    const slides = document.querySelectorAll('.home-banner-slide');
+    const dots = document.querySelectorAll('.home-banner-dot');
 
-        if (index >= slides.length) {
-            wideSlideIndex = 0;
-        } else if (index < 0) {
-            wideSlideIndex = slides.length - 1;
-        } else {
-            wideSlideIndex = index;
-        }
+    if (!slides.length) return;
 
-        slides.forEach((slide) => {
-            slide.classList.remove('active');
-        });
-
-        dots.forEach((dot) => {
-            dot.classList.remove('active');
-        });
-
-        slides[wideSlideIndex].classList.add('active');
-
-        if (dots[wideSlideIndex]) {
-            dots[wideSlideIndex].classList.add('active');
-        }
+    if (index >= slides.length) {
+        homeBannerIndex = 0;
+    } else if (index < 0) {
+        homeBannerIndex = slides.length - 1;
+    } else {
+        homeBannerIndex = index;
     }
 
-    function changeWideSlide(direction) {
-        showWideSlide(wideSlideIndex + direction);
-        restartWideSlider();
-    }
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
 
-    function goToWideSlide(index) {
-        showWideSlide(index);
-        restartWideSlider();
-    }
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+    });
 
-    function startWideSlider() {
-        wideSliderTimer = setInterval(function () {
-            showWideSlide(wideSlideIndex + 1);
-        }, 5000);
-    }
+    slides[homeBannerIndex].classList.add('active');
 
-    function restartWideSlider() {
-        clearInterval(wideSliderTimer);
-        startWideSlider();
+    if (dots[homeBannerIndex]) {
+        dots[homeBannerIndex].classList.add('active');
     }
+}
 
-    showWideSlide(0);
-    startWideSlider();
+function changeHomeBanner(direction) {
+    showHomeBanner(homeBannerIndex + direction);
+    restartHomeBanner();
+}
+
+function goToHomeBanner(index) {
+    showHomeBanner(index);
+    restartHomeBanner();
+}
+
+function startHomeBanner() {
+    homeBannerTimer = setInterval(function () {
+        showHomeBanner(homeBannerIndex + 1);
+    }, 5000);
+}
+
+function restartHomeBanner() {
+    clearInterval(homeBannerTimer);
+    startHomeBanner();
+}
+
+showHomeBanner(0);
+startHomeBanner();
 </script>
 
 </body>
