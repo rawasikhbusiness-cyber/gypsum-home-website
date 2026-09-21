@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>جبس هوم | Gypsum Home</title>
+
+    <meta name="description"
+        content="جبس هوم - متخصصون في توريد وتركيب الجبس بورد والسيراميك والبورسلان بجودة تنفيذ عالية وتشطيبات احترافية.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           الهوية
+        ===================================================== */
+
+        :root {
+            --bronze: #a98268;
+            --bronze-dark: #765744;
+            --bronze-light: #d6b9a5;
+
+            --dark: #4d4e48;
+            --dark-2: #62635d;
+
+            --cream: #f7f3ef;
+            --cream-2: #eee6df;
+
+            --white: #ffffff;
+            --black: #292a27;
+
+            --border: #e8e0d9;
+
+            --whatsapp: #25D366;
+
+            --shadow:
+                0 20px 60px rgba(66, 52, 43, .10);
+
+            --container: 1180px;
+        }
+
+
+        /* =====================================================
+           Reset
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.8;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(
+                var(--container),
+                calc(100% - 40px)
+            );
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           Header
+        ===================================================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(255, 255, 255, .96);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            height: 86px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text strong {
+            font-size: 18px;
+            color: var(--bronze-dark);
+        }
+
+        .logo-text span {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #777;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a {
+            position: relative;
+            transition: .2s;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: -8px;
+            right: 0;
+
+            width: 0;
+            height: 2px;
+
+            background: var(--bronze);
+
+            transition: .25s;
+        }
+
+        nav a:hover {
+            color: var(--bronze);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-button {
+            padding: 12px 20px;
+
+            background: var(--bronze);
+            color: white;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .25s;
+        }
+
+        .header-button:hover {
+            background: var(--bronze-dark);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+
+            background: none;
+            border: 0;
+
+            font-size: 27px;
+            color: var(--dark);
+        }
+
+
+        /* =====================================================
+           Mobile Navigation
+        ===================================================== */
+
+        .mobile-nav {
+            display: none;
+
+            background: white;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            padding: 15px 20px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+
+            padding: 10px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: 0;
+        }
+
+
+        /* =====================================================
+           Hero
+        ===================================================== */
+
+        .hero {
+            min-height: 680px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff 0%,
+                    #faf8f6 50%,
+                    #f0e8e1 100%
+                );
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(169, 130, 104, .08);
+
+            left: -230px;
+            top: -220px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(169, 130, 104, .18);
+
+            left: 5%;
+            bottom: -170px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                1.05fr
+                .95fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+        .small-title {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--bronze-dark);
+
+            font-size: 13px;
+            font-weight: 800;
+
+            margin-bottom: 18px;
+        }
+
+        .small-title::before {
+            content: "";
+
+            width: 35px;
+            height: 2px;
+
+            background: var(--bronze);
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(40px, 5vw, 67px);
+
+            line-height: 1.15;
+
+            color: var(--dark);
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--bronze);
+        }
+
+        .hero-description {
+            color: #70716b;
+
+            font-size: 17px;
+
+            max-width: 650px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 0;
+
+            padding: 14px 23px;
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            transition: .25s;
+        }
+
+        .btn-primary {
+            background: var(--bronze);
+            color: white;
+
+            box-shadow:
+                0 12px 30px rgba(169, 130, 104, .25);
+        }
+
+        .btn-primary:hover {
+            background: var(--bronze-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            color: var(--dark);
+
+            box-shadow:
+                0 10px 30px rgba(50, 40, 30, .05);
+        }
+
+        .btn-light:hover {
+            border-color: var(--bronze-light);
+
+            transform: translateY(-3px);
+        }
+
+        .hero-points {
+            margin-top: 27px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .hero-point {
+            padding: 7px 13px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: #6d6e68;
+        }
+
+
+        /* =====================================================
+           Hero Visual
+        ===================================================== */
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-frame {
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 35px;
+
+            box-shadow: var(--shadow);
+
+            transform: rotate(1deg);
+        }
+
+        .hero-frame-inner {
+            height: 475px;
+
+            border-radius: 27px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #eee3da,
+                    #faf8f5
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .hero-frame-inner img {
+            width: 70%;
+
+            object-fit: contain;
+        }
+
+        .floating-box {
+            position: absolute;
+
+            bottom: 25px;
+            right: -25px;
+
+            background: white;
+
+            padding: 18px 22px;
+
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+
+            font-size: 12px;
+            font-weight: 800;
+
+            border-right: 3px solid var(--bronze);
+        }
+
+
+        /* Hero slider */
+        .hero-frame-inner { position: relative; }
+        .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover !important; opacity:0; transition:opacity .8s ease; }
+        .hero-slide.active { opacity:1; }
+        .slider-dots { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:5; }
+        .slider-dot { width:9px; height:9px; border-radius:50%; border:0; background:rgba(255,255,255,.65); padding:0; }
+        .slider-dot.active { background:var(--bronze); transform:scale(1.25); }
+        .slider-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:5; width:40px; height:40px; border:0; border-radius:50%; background:rgba(255,255,255,.85); color:var(--dark); font-size:22px; box-shadow:0 6px 18px rgba(0,0,0,.12); }
+        .slider-arrow.prev { right:16px; }
+        .slider-arrow.next { left:16px; }
+
+        /* Bottom advertising banner */
+        .bottom-ad { padding: 0 0 70px; background: var(--white); }
+        .bottom-ad-link { display:block; position:relative; overflow:hidden; border-radius:28px; box-shadow:var(--shadow); background:var(--cream); }
+        .bottom-ad-link img { width:100%; height:auto; display:block; }
+        .bottom-ad-overlay { position:absolute; inset:0; display:flex; align-items:flex-end; padding:28px; background:linear-gradient(to top, rgba(30,25,21,.58), transparent 55%); color:#fff; pointer-events:none; }
+        .bottom-ad-overlay strong { font-size:20px; }
+
+        /* =====================================================
+           Sections
+        ===================================================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 720px;
+
+            margin:
+                0 auto 55px;
+        }
+
+        .section-heading small {
+            color: var(--bronze);
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            font-size:
+                clamp(30px, 4vw, 45px);
+
+            line-height: 1.3;
+
+            color: var(--dark);
+
+            margin:
+                8px 0 12px;
+        }
+
+        .section-heading p {
+            color: #777873;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           Services
+        ===================================================== */
+
+        .services {
+            background: var(--cream);
+        }
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 25px;
+
+            padding: 32px;
+
+            transition: .3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--bronze),
+                    transparent
+                );
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .service-number {
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            color: var(--bronze);
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+
+            border-radius: 17px;
+
+            background: #f1e7df;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+
+            margin-bottom: 10px;
+
+            color: var(--dark);
+        }
+
+        .service-card > p {
+            font-size: 13px;
+
+            color: #777873;
+
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+        .service-list li {
+            font-size: 12px;
+
+            color: #656660;
+
+            padding-right: 22px;
+
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: "✓";
+
+            position: absolute;
+
+            right: 0;
+
+            color: var(--bronze);
+
+            font-weight: 800;
+        }
+
+
+        /* =====================================================
+           Trust Bar
+        ===================================================== */
+
+        .trust-bar {
+            padding: 28px 0;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+
+            background: white;
+        }
+
+        .trust-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            text-align: center;
+        }
+
+        .trust-item {
+            padding: 10px;
+
+            border-left: 1px solid var(--border);
+        }
+
+        .trust-item:last-child {
+            border-left: 0;
+        }
+
+        .trust-item strong {
+            display: block;
+
+            color: var(--bronze-dark);
+
+            font-size: 15px;
+        }
+
+        .trust-item span {
+            color: #888;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           Calculator
+        ===================================================== */
+
+        .calculator {
+            background: white;
+        }
+
+        .calculator-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 25px;
+        }
+
+        .calculator-intro {
+            background:
+                linear-gradient(
+                    145deg,
+                    #56463b,
+                    #896b56
+                );
+
+            color: white;
+
+            border-radius: 27px;
+
+            padding: 40px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+        .calculator-intro small {
+            color: #e7cdbb;
+
+            font-weight: 800;
+        }
+
+        .calculator-intro h3 {
+            font-size: 30px;
+
+            line-height: 1.35;
+
+            margin:
+                12px 0;
+        }
+
+        .calculator-intro p {
+            color: rgba(255, 255, 255, .75);
+
+            font-size: 13px;
+        }
+
+        .calculator-note {
+            border-top:
+                1px solid rgba(255, 255, 255, .2);
+
+            padding-top: 18px;
+
+            font-size: 11px;
+
+            color:
+                rgba(255, 255, 255, .65);
+        }
+
+        .calculator-box {
+            padding: 35px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 27px;
+
+            box-shadow: var(--shadow);
+
+            background: white;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            display: block;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+        .field select,
+        .field input,
+        .field textarea {
+            width: 100%;
+
+            padding: 14px 15px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background: #faf9f7;
+
+            transition: .2s;
+        }
+
+        .field textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .field select:focus,
+        .field input:focus,
+        .field textarea:focus {
+            border-color: var(--bronze);
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px rgba(169, 130, 104, .08);
+        }
+
+        .calculator-result {
+            margin-top: 20px;
+
+            padding: 22px;
+
+            border-radius: 17px;
+
+            background: var(--cream);
+
+            text-align: center;
+        }
+
+        .calculator-result span {
+            display: block;
+
+            font-size: 11px;
+
+            color: #777;
+        }
+
+        .calculator-result strong {
+            display: block;
+
+            font-size: 31px;
+
+            color: var(--bronze-dark);
+
+            margin-top: 3px;
+        }
+
+
+        /* =====================================================
+           Why Us
+        ===================================================== */
+
+        .why {
+            background: var(--cream);
+        }
+
+        .why-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .why-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 21px;
+
+            padding: 27px 22px;
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 15px;
+
+            background: #f0e5dd;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 17px;
+
+            color: var(--bronze-dark);
+
+            font-size: 20px;
+        }
+
+        .why-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .why-card p {
+            color: #777873;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           Workflow
+        ===================================================== */
+
+        .workflow {
+            background: var(--dark);
+
+            color: white;
+        }
+
+        .workflow .section-heading h2 {
+            color: white;
+        }
+
+        .workflow .section-heading p {
+            color: #b9bab5;
+        }
+
+        .workflow-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+        }
+
+        .workflow-item {
+            text-align: center;
+
+            position: relative;
+
+            padding: 0 22px;
+        }
+
+        .workflow-item:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+
+            top: 30px;
+
+            left: -5px;
+
+            width: 45%;
+
+            height: 1px;
+
+            background: #8f725f;
+        }
+
+        .workflow-number {
+            width: 60px;
+            height: 60px;
+
+            margin:
+                0 auto 18px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: var(--bronze);
+
+            font-family: Arial, sans-serif;
+
+            font-weight: 800;
+        }
+
+        .workflow-item h3 {
+            font-size: 15px;
+
+            margin-bottom: 7px;
+        }
+
+        .workflow-item p {
+            font-size: 11px;
+
+            color: #b9bab5;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 85px 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f7f1ec,
+                    #fff
+                );
+        }
+
+        .cta-box {
+            text-align: center;
+
+            padding: 55px 25px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            border: 1px solid var(--bronze-light);
+
+            box-shadow: var(--shadow);
+        }
+
+        .cta-box h2 {
+            font-size: 37px;
+
+            color: var(--dark);
+
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+
+            margin:
+                0 auto 25px;
+
+            color: #777873;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           Footer
+        ===================================================== */
+
+        footer {
+            background: #41423e;
+
+            color: white;
+
+            padding:
+                55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        footer h3 {
+            font-size: 17px;
+
+            margin-bottom: 10px;
+        }
+
+        footer p,
+        footer a {
+            color: #bbbcb7;
+
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: grid;
+
+            gap: 6px;
+        }
+
+        .footer-links a:hover {
+            color: var(--bronze-light);
+        }
+
+        .copyright {
+            border-top:
+                1px solid rgba(255, 255, 255, .1);
+
+            margin-top: 35px;
+
+            padding-top: 18px;
+
+            text-align: center;
+
+            color: #969792;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           WhatsApp
+        ===================================================== */
+
+        .whatsapp {
+            position: fixed;
+
+            bottom: 22px;
+            left: 22px;
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: var(--whatsapp);
+
+            color: white;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 27px;
+
+            z-index: 90;
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, .2);
+
+            transition: .25s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.08);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+
+        /* =====================================================
+           Modal
+        ===================================================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 200;
+
+            background:
+                rgba(30, 25, 21, .6);
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            width: min(560px, 100%);
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 32px;
+
+            position: relative;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            width: 35px;
+            height: 35px;
+
+            border: 0;
+
+            background: #f2ede8;
+
+            border-radius: 50%;
+
+            font-size: 20px;
+        }
+
+        .close-modal:hover {
+            background: var(--cream-2);
+        }
+
+        .modal-box h2 {
+            color: var(--dark);
+
+            margin-bottom: 6px;
+        }
+
+        .modal-box > p {
+            color: #777;
+
+            font-size: 12px;
+
+            margin-bottom: 22px;
+        }
+
+
+        /* =====================================================
+           Responsive
+        ===================================================== */
+
+        @media(max-width: 950px) {
+
+            nav,
+            .header-button {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-grid,
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero-content {
+                text-align: center;
+
+                margin: auto;
+            }
+
+            .small-title {
+                justify-content: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions,
+            .hero-points {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 650px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
+            .why-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .workflow-grid {
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 40px 0;
+            }
+
+            .workflow-item::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .container {
+                width:
+                    calc(100% - 28px);
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .logo img {
+                width: 54px;
+                height: 54px;
+            }
+
+            .logo-text strong {
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-frame-inner {
+                height: 340px;
+            }
+
+            .floating-box {
+                right: 10px;
+
+                bottom: 12px;
+            }
+
+            .services-grid,
+            .why-grid,
+            .workflow-grid,
+            .trust-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item {
+                border-left: 0;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+            .trust-item:last-child {
+                border-bottom: 0;
+            }
+
+            .calculator-intro,
+            .calculator-box {
+                padding: 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 29px;
+            }
+
+            .whatsapp {
+                left: 15px;
+
+                bottom: 15px;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="container header-inner">
+
+        <a href="#home" class="logo">
+
+            <img
+                src="assets/logo.png"
+                alt="جبس هوم Gypsum Home"
+            >
+
+            <div class="logo-text">
+
+                <strong>
+                    جبس هوم
+                </strong>
+
+                <span>
+                    GYPSUM HOME
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#home">
+                الرئيسية
+            </a>
+
+            <a href="#services">
+                خدماتنا
+            </a>
+
+            <a href="#calculator">
+                حاسبة التكلفة
+            </a>
+
+            <a href="#why">
+                لماذا جبس هوم؟
+            </a>
+
+            <a href="#workflow">
+                مراحل العمل
+            </a>
+
+        </nav>
+
+
+        <a
+            class="header-button"
+            href="#"
+            onclick="openWhatsApp(event)"
+        >
+            💬 استشارة واتساب
+        </a>
+
+
+        <button
+            class="mobile-menu"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <!-- قائمة الجوال -->
+
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+    >
+
+        <a href="#home" onclick="closeMenu()">
+            الرئيسية
+        </a>
+
+        <a href="#services" onclick="closeMenu()">
+            خدماتنا
+        </a>
+
+        <a href="#calculator" onclick="closeMenu()">
+            حاسبة التكلفة
+        </a>
+
+        <a href="#why" onclick="closeMenu()">
+            لماذا جبس هوم؟
+        </a>
+
+        <a href="#workflow" onclick="closeMenu()">
+            مراحل العمل
+        </a>
+
+        <a
+            href="#"
+            onclick="openWhatsApp(event)"
+        >
+            💬 تواصل عبر واتساب
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="container hero-grid">
+
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                تشطيبات داخلية باحترافية
+            </div>
+
+
+            <h1>
+
+                دقة التنفيذ وفخامة التشطيب مع
+
+                <span>
+                    جبس هوم
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                حلول متكاملة لتوريد وتركيب الجبس بورد
+                والسيراميك والبورسلان بمواصفات دقيقة
+                وتنفيذ احترافي وضمان على الأعمال.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="#calculator"
+                    class="btn btn-primary"
+                >
+                    📐 احسب تكلفة مشروعك
+                </a>
+
+
+                <button
+                    class="btn btn-light"
+                    onclick="openModal()"
+                >
+                    📲 طلب معاينة موقع
+                </button>
+
+            </div>
+
+
+            <div class="hero-points">
+
+                <span class="hero-point">
+                    توريد
+                </span>
+
+                <span class="hero-point">
+                    تركيب
+                </span>
+
+                <span class="hero-point">
+                    تشطيب
+                </span>
+
+                <span class="hero-point">
+                    ضمان
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual">
+
+            <div class="hero-frame">
+
+                <div class="hero-frame-inner">
+
+                                        <img class="hero-slide active" src="assets/banner-1.jpg" alt="مشاريع جبس هوم - 1">
+                    <img class="hero-slide" src="assets/banner-2.jpg" alt="مشاريع جبس هوم - 2">
+                    <img class="hero-slide" src="assets/banner-3.jpg" alt="مشاريع جبس هوم - 3">
+                    <button class="slider-arrow prev" type="button" onclick="changeSlide(-1)" aria-label="الصورة السابقة">›</button>
+                    <button class="slider-arrow next" type="button" onclick="changeSlide(1)" aria-label="الصورة التالية">‹</button>
+                    <div class="slider-dots" aria-label="التنقل بين صور البنر">
+                        <button class="slider-dot active" type="button" onclick="goToSlide(0)" aria-label="الصورة 1"></button>
+                        <button class="slider-dot" type="button" onclick="goToSlide(1)" aria-label="الصورة 2"></button>
+                        <button class="slider-dot" type="button" onclick="goToSlide(2)" aria-label="الصورة 3"></button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-box">
+
+                جودة الخامات
+                <br>
+                ودقة التنفيذ
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="services"
+    id="services"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                خدماتنا التخصصية
+            </small>
+
+            <h2>
+                حلول تشطيب متكاملة
+            </h2>
+
+            <p>
+                نركز على نشاطين رئيسيين لنقدم مستوى أعلى من التخصص
+                وجودة التنفيذ.
+            </p>
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <!-- جبس بورد -->
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <div class="service-icon">
+                    ▱
+                </div>
+
+                <h3>
+                    توريد وتركيب الجبس بورد
+                </h3>
+
+                <p>
+                    حلول متخصصة للأسقف والقواطع والديكورات الداخلية
+                    للمشاريع السكنية والتجارية.
+                </p>
+
+
+                <ul class="service-list">
+
+                    <li>
+                        أسقف مستعارة وديكورات مودرن
+                    </li>
+
+                    <li>
+                        قواطع جدارية Drywall
+                    </li>
+
+                    <li>
+                        عزل صوتي وحراري
+                    </li>
+
+                    <li>
+                        خلفيات الشاشات
+                    </li>
+
+                    <li>
+                        ألواح مقاومة للرطوبة
+                    </li>
+
+                    <li>
+                        ألواح مقاومة للحريق
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+
+            <!-- السيراميك والبورسلان -->
+
+            <article class="service-card">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    توريد وتركيب السيراميك والبورسلان
+                </h3>
+
+                <p>
+                    تنفيذ الأرضيات والجدران مع القص والتفصيل
+                    وأنظمة التسوية للوصول إلى تشطيب دقيق.
+                </p>
+
+
+                <ul class="service-list">
+
+                    <li>
+                        تركيب الأرضيات والجدران
+                    </li>
+
+                    <li>
+                        بورسلان وسيراميك
+                    </li>
+
+                    <li>
+                        قص 45° ميترينو
+                    </li>
+
+                    <li>
+                        تفصيل الدرجات
+                    </li>
+
+                    <li>
+                        Leveling System
+                    </li>
+
+                    <li>
+                        مواد لاصقة مناسبة
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST BAR
+===================================================== -->
+
+<div class="trust-bar">
+
+    <div class="container trust-grid">
+
+        <div class="trust-item">
+
+            <strong>
+                خامات مختارة
+            </strong>
+
+            <span>
+                وفق طبيعة المشروع
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>
+                كوادر تخصصية
+            </strong>
+
+            <span>
+                تنفيذ احترافي
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>
+                التزام بالمواعيد
+            </strong>
+
+            <span>
+                تنظيم مراحل التنفيذ
+            </span>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <strong>
+                ضمان على التنفيذ
+            </strong>
+
+            <span>
+                وفق شروط الاتفاق
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CALCULATOR
+===================================================== -->
+
+<section id="calculator">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                حاسبة التكلفة
+            </small>
+
+            <h2>
+                احسب التكلفة التقديرية لمشروعك
+            </h2>
+
+            <p>
+                أدخل نوع الخدمة والمساحة للحصول على تقدير مبدئي.
+            </p>
+
+        </div>
+
+
+
+        <div class="calculator-grid">
+
+
+            <div class="calculator-intro">
+
+                <div>
+
+                    <small>
+                        ESTIMATE
+                    </small>
+
+                    <h3>
+                        تقدير مبدئي
+                        قبل طلب العرض النهائي
+                    </h3>
+
+                    <p>
+                        تساعدك الحاسبة على تكوين فكرة أولية
+                        عن ميزانية المشروع، بينما يتم اعتماد
+                        السعر النهائي بعد المعاينة والمواصفات.
+                    </p>
+
+                </div>
+
+
+                <div class="calculator-note">
+
+                    * الأسعار تقديرية ويمكن تعديلها حسب
+                    الخامات والمواصفات ونطاق العمل.
+
+                </div>
+
+            </div>
+
+
+
+            <div class="calculator-box">
+
+
+                <div class="field">
+
+                    <label for="serviceType">
+                        نوع الخدمة
+                    </label>
+
+                    <select id="serviceType">
+
+                        <option value="gypsum">
+                            توريد وتركيب جبس بورد
+                        </option>
+
+                        <option value="ceramic">
+                            توريد وتركيب سيراميك
+                        </option>
+
+                        <option value="porcelain">
+                            توريد وتركيب بورسلان
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="level">
+                        مستوى التنفيذ
+                    </label>
+
+                    <select id="level">
+
+                        <option value="basic">
+                            أساسي
+                        </option>
+
+                        <option
+                            value="standard"
+                            selected
+                        >
+                            قياسي
+                        </option>
+
+                        <option value="premium">
+                            فاخر
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label for="area">
+                        المساحة بالمتر المربع
+                    </label>
+
+                    <input
+                        type="number"
+                        id="area"
+                        min="1"
+                        placeholder="مثال: 100"
+                    >
+
+                </div>
+
+
+
+                <button
+                    class="btn btn-primary"
+                    style="width:100%"
+                    onclick="calculateCost()"
+                >
+                    احسب التكلفة
+                </button>
+
+
+
+                <div class="calculator-result">
+
+                    <span>
+                        التكلفة التقديرية
+                    </span>
+
+                    <strong id="totalPrice">
+                        0 ريال
+                    </strong>
+
+                </div>
+
+
+
+                <button
+                    class="btn btn-light"
+                    style="width:100%; margin-top:10px;"
+                    onclick="openModal()"
+                >
+                    📲 اطلب عرض سعر دقيق
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section
+    class="why"
+    id="why"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                لماذا جبس هوم؟
+            </small>
+
+            <h2>
+                تفاصيل تصنع فرقًا في النتيجة النهائية
+            </h2>
+
+            <p>
+                نعمل على تقديم تجربة واضحة ومنظمة من المعاينة
+                وحتى التسليم.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◆
+                </div>
+
+                <h3>
+                    خامات معتمدة
+                </h3>
+
+                <p>
+                    اختيار المواد المناسبة لطبيعة المشروع
+                    والمواصفات المطلوبة.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    كوادر تخصصية
+                </h3>
+
+                <p>
+                    فنيون متخصصون في أعمال الجبس بورد
+                    والسيراميك والبورسلان.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ◷
+                </div>
+
+                <h3>
+                    التزام بالمواعيد
+                </h3>
+
+                <p>
+                    تنظيم مراحل التنفيذ ومتابعة الجدول
+                    الزمني المتفق عليه.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ♢
+                </div>
+
+                <h3>
+                    ضمان على التنفيذ
+                </h3>
+
+                <p>
+                    ضمان على الأعمال وفق نطاق وشروط
+                    الضمان المتفق عليها.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WORKFLOW
+===================================================== -->
+
+<section
+    class="workflow"
+    id="workflow"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <small>
+                مراحل العمل
+            </small>
+
+            <h2>
+                من المعاينة إلى التسليم
+            </h2>
+
+            <p>
+                خطوات واضحة لتنفيذ المشروع بطريقة منظمة.
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow-grid">
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    01
+                </div>
+
+                <h3>
+                    المعاينة والرفع المساحي
+                </h3>
+
+                <p>
+                    زيارة الموقع وفهم الاحتياج وأخذ المقاسات.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    02
+                </div>
+
+                <h3>
+                    التسعير والمواصفات
+                </h3>
+
+                <p>
+                    تحديد الخامات والكميات والمواصفات
+                    وتقديم العرض.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    03
+                </div>
+
+                <h3>
+                    التوريد والتنفيذ
+                </h3>
+
+                <p>
+                    توريد المواد والبدء بالتنفيذ وفق الاتفاق.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <div class="workflow-number">
+                    04
+                </div>
+
+                <h3>
+                    التسليم والضمان
+                </h3>
+
+                <p>
+                    فحص الأعمال وتسليم المشروع وتوضيح الضمان.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                لديك مشروع تشطيب؟
+            </h2>
+
+            <p>
+                أرسل لنا تفاصيل مشروعك وسنتواصل معك
+                لتحديد الاحتياج وتنسيق المعاينة.
+            </p>
+
+
+            <div
+                class="hero-actions"
+                style="justify-content:center;"
+            >
+
+                <button
+                    class="btn btn-primary"
+                    onclick="openModal()"
+                >
+                    📲 طلب معاينة موقع
+                </button>
+
+
+                <a
+                    href="#"
+                    class="btn btn-light"
+                    onclick="openWhatsApp(event)"
+                >
+                    💬 تواصل عبر واتساب
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOTTOM AD BANNER
+===================================================== -->
+<section class="bottom-ad" aria-label="عرض جبس هوم">
+    <div class="container">
+        <a class="bottom-ad-link" href="#" onclick="openBottomBannerWhatsApp(event)">
+            <img src="assets/bottom-banner.jpg" alt="عرض جبس هوم">
+            <div class="bottom-ad-overlay"><strong>اضغط على العرض للتواصل عبر واتساب</strong></div>
+        </a>
+    </div>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    جبس هوم | Gypsum Home
+                </h3>
+
+                <p>
+                    متخصصون في توريد وتركيب الجبس بورد
+                    والسيراميك والبورسلان.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    روابط سريعة
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="#home">
+                        الرئيسية
+                    </a>
+
+                    <a href="#services">
+                        خدماتنا
+                    </a>
+
+                    <a href="#calculator">
+                        حاسبة التكلفة
+                    </a>
+
+                    <a href="#why">
+                        لماذا جبس هوم؟
+                    </a>
+
+                    <a href="#workflow">
+                        مراحل العمل
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    تواصل معنا
+                </h3>
+
+                <div class="footer-links">
+
+                    <a
+                        href="#"
+                        onclick="openWhatsApp(event)"
+                    >
+                        واتساب
+                    </a>
+
+                    <a href="mailto:info@gypsumhome.com">
+                        info@gypsumhome.com
+                    </a>
+
+                    <a href="https://gypsumhome.com/">
+                        gypsumhome.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 جبس هوم - Gypsum Home
+            <br>
+            جميع الحقوق محفوظة
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+    href="#"
+    class="whatsapp"
+    onclick="openWhatsApp(event)"
+    aria-label="التواصل عبر واتساب"
+>
+    ☎
+</a>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="modal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="closeModal()"
+            aria-label="إغلاق"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            طلب معاينة موقع
+        </h2>
+
+        <p>
+            أدخل بيانات المشروع وسنجهز رسالة الطلب
+            لإرسالها عبر واتساب.
+        </p>
+
+
+        <form onsubmit="submitRequest(event)">
+
+
+            <div class="field">
+
+                <label for="clientName">
+                    الاسم
+                </label>
+
+                <input
+                    id="clientName"
+                    required
+                    placeholder="الاسم الكامل"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="clientPhone">
+                    رقم الجوال
+                </label>
+
+                <input
+                    id="clientPhone"
+                    required
+                    type="tel"
+                    placeholder="05xxxxxxxx"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="clientCity">
+                    المدينة
+                </label>
+
+                <input
+                    id="clientCity"
+                    required
+                    placeholder="الرياض"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="clientService">
+                    نوع الخدمة
+                </label>
+
+                <select id="clientService">
+
+                    <option>
+                        توريد وتركيب جبس بورد
+                    </option>
+
+                    <option>
+                        توريد وتركيب سيراميك
+                    </option>
+
+                    <option>
+                        توريد وتركيب بورسلان
+                    </option>
+
+                    <option>
+                        جبس بورد + سيراميك / بورسلان
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="clientArea">
+                    المساحة التقريبية
+                </label>
+
+                <input
+                    id="clientArea"
+                    type="number"
+                    min="1"
+                    placeholder="بالمتر المربع"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="clientNotes">
+                    ملاحظات
+                </label>
+
+                <textarea
+                    id="clientNotes"
+                    placeholder="تفاصيل إضافية عن المشروع"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary"
+                style="width:100%"
+                type="submit"
+            >
+                إرسال الطلب عبر واتساب
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   إعدادات الموقع
+===================================================== */
+
+const CONFIG = {
+
+    /*
+       رقم واتساب جبس هوم
+
+       الرقم المحلي:
+       0544955085
+
+       الصيغة الدولية:
+       966544955085
+
+       بدون + وبدون مسافات
+    */
+
+    whatsapp: "966544955085",
+
+
+    /*
+       أسعار المتر التقديرية
+    */
+
+    prices: {
+
+        gypsum: {
+
+            basic: 65,
+            standard: 85,
+            premium: 110
+
+        },
+
+        ceramic: {
+
+            basic: 45,
+            standard: 60,
+            premium: 80
+
+        },
+
+        porcelain: {
+
+            basic: 60,
+            standard: 80,
+            premium: 105
+
+        }
+
+    }
+
+};
+
+
+/* =====================================================
+   البنر الرئيسي المتحرك
+===================================================== */
+let currentSlide = 0;
+const SLIDE_INTERVAL = 3000;
+let sliderTimer;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    if (!slides.length) return;
+    currentSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === currentSlide));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
+}
+function startSlider() {
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(() => showSlide(currentSlide + 1), SLIDE_INTERVAL);
+}
+function changeSlide(step) { showSlide(currentSlide + step); startSlider(); }
+function goToSlide(index) { showSlide(index); startSlider(); }
+startSlider();
+
+function openBottomBannerWhatsApp(event) {
+    if (event) event.preventDefault();
+    const message = 'السلام عليكم، شاهدت العرض في موقع جبس هوم وأرغب في معرفة التفاصيل.';
+    const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message);
+    window.open(url, '_blank');
+}
+
+/* =====================================================
+   قائمة الجوال
+===================================================== */
+
+function toggleMenu() {
+
+    const mobileNav =
+        document.getElementById("mobileNav");
+
+    mobileNav.classList.toggle("active");
+
+}
+
+
+function closeMenu() {
+
+    const mobileNav =
+        document.getElementById("mobileNav");
+
+    mobileNav.classList.remove("active");
+
+}
+
+
+/* =====================================================
+   فتح واتساب
+===================================================== */
+
+function openWhatsApp(event) {
+
+    if (event) {
+        event.preventDefault();
+    }
+
+
+    const message =
+        `السلام عليكم، أرغب في الاستفسار عن خدمات جبس هوم.`;
+
+
+    const url =
+        "https://wa.me/" +
+        CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   الحاسبة
+===================================================== */
+
+function calculateCost() {
+
+    const service =
+        document.getElementById(
+            "serviceType"
+        ).value;
+
+
+    const level =
+        document.getElementById(
+            "level"
+        ).value;
+
+
+    const area =
+        Number(
+            document.getElementById(
+                "area"
+            ).value
+        );
+
+
+    const result =
+        document.getElementById(
+            "totalPrice"
+        );
+
+
+    if (!area || area <= 0) {
+
+        result.innerText =
+            "أدخل المساحة";
+
+        return;
+
+    }
+
+
+    const price =
+        CONFIG.prices[service][level];
+
+
+    const total =
+        area * price;
+
+
+    result.innerText =
+        total.toLocaleString("ar-SA") +
+        " ريال";
+
+}
+
+
+/* =====================================================
+   فتح النموذج
+===================================================== */
+
+function openModal() {
+
+    document
+        .getElementById("modal")
+        .classList
+        .add("active");
+
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+/* =====================================================
+   إغلاق النموذج
+===================================================== */
+
+function closeModal() {
+
+    document
+        .getElementById("modal")
+        .classList
+        .remove("active");
+
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+}
+
+
+/* =====================================================
+   إرسال طلب المعاينة عبر واتساب
+===================================================== */
+
+function submitRequest(event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById(
+            "clientName"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "clientPhone"
+        ).value.trim();
+
+
+    const city =
+        document.getElementById(
+            "clientCity"
+        ).value.trim();
+
+
+    const service =
+        document.getElementById(
+            "clientService"
+        ).value;
+
+
+    const area =
+        document.getElementById(
+            "clientArea"
+        ).value ||
+        "غير محددة";
+
+
+    const notes =
+        document.getElementById(
+            "clientNotes"
+        ).value.trim() ||
+        "لا توجد";
+
+
+    const message =
+
+`السلام عليكم،
+
+أرغب في طلب معاينة من جبس هوم.
+
+الاسم:
+${name}
+
+الجوال:
+${phone}
+
+المدينة:
+${city}
+
+الخدمة:
+${service}
+
+المساحة:
+${area} م²
+
+الملاحظات:
+${notes}
+
+وشكرًا لكم.`;
+
+
+    const url =
+        "https://wa.me/" +
+        CONFIG.whatsapp +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    closeModal();
+
+}
+
+
+/* =====================================================
+   إغلاق النموذج عند الضغط خارجه
+===================================================== */
+
+document
+    .getElementById("modal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   إغلاق القائمة عند الضغط على الروابط
+===================================================== */
+
+document
+    .querySelectorAll(".mobile-nav a")
+    .forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                closeMenu();
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   زر ESC لإغلاق النوافذ
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeModal();
+            closeMenu();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
