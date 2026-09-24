@@ -1626,16 +1626,19 @@
 .seo-hero-content {
     position: relative;
     z-index: 5;
-    width: 100%;
-    padding: 28px 5%;
+    width: min(1180px, calc(100% - 40px));
+    margin: 28px auto 22px;
+    padding: 24px 30px;
     text-align: center;
-    background: #f7f3ef;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
 .seo-hero-content h1 {
     margin: 0 0 10px;
     color: #4d4e48;
-    font-size: clamp(24px, 3vw, 38px);
+    font-size: clamp(24px, 3vw, 36px);
     font-weight: 800;
     line-height: 1.5;
 }
@@ -1644,7 +1647,7 @@
     max-width: 900px;
     margin: 0 auto;
     color: #62635d;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.9;
 }
 .home-banner-track {
