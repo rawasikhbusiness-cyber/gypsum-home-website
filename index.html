@@ -3093,9 +3093,11 @@ function openBottomBannerWhatsApp(event) {
     if (event) event.preventDefault();
     const message = 'السلام عليكم، شاهدت العرض في موقع جبس هوم وأرغب في معرفة التفاصيل.';
     const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(message);
+ <!-- Event snippet for ضغط واتساب - جبس هوم conversion page -->
+  gtag('event', 'conversion', {'send_to': 'AW-18474282085/RW4GCOHzjokdEOXYnOlE'});
     window.open(url, '_blank');
+    
 }
-
 /* =====================================================
    قائمة الجوال
 ===================================================== */
